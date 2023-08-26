@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.scss';
-
+import logo from "./logo.svg";
+import "./App.scss";
+import Example from "./Example/example";
 function App() {
   return (
     <div className="App">
@@ -15,8 +15,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          adu
         </a>
+        {<Example></Example>}
       </header>
     </div>
   );
