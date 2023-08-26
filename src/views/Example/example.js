@@ -1,54 +1,25 @@
 import React from "react";
 import ChildExample from "./ChildExample";
+import FromExample from "./formExample";
 class example extends React.Component {
   state = {
-    firstName: "Tung",
-    lastName: "Suwa",
+    arrJobs: [
+      { id: "abcjob1", title: "Developers", salary: "500 $" },
+      { id: "abcjob2", title: "Tester", salary: "300 $" },
+      { id: "abcjob3", title: "Project mana", salary: "400 $" },
+    ],
   };
-  handleChangeFirstName = (event) => {
-    this.setState({
-      firstName: event.target.value,
-    });
-  };
-  handleChangeLastName = (event) => {
-    this.setState({
-      lastName: event.target.value,
-    });
-  };
-  handleSubmit = (event) => {
-    event.preventDefault();
-    alert("Click me");
-  };
+
   render() {
     return (
       <>
-        <form>
-          <label htmlFor="fname">First name:</label>
-          <br />
-          <input
-            type="text"
-            id="fname"
-            value={this.state.firstName}
-            onChange={(event) => this.handleChangeFirstName(event)}
-          />
-          <br />
-          <label htmlFor="lname">Last name:</label>
-          <br />
-          <input
-            type="text"
-            id="lname"
-            value={this.state.lastName}
-            onChange={(event) => this.handleChangeLastName(event)}
-          />
-          <br />
-          <br />
-          <input
-            type="submit"
-            value="Submit"
-            onClick={(event) => this.handleSubmit(event)}
-          />
-        </form>
-        {<ChildExample></ChildExample>}
+        <FromExample />
+        {
+          <ChildExample
+            name={this.state.firstName}
+            arrJobs={this.state.arrJobs}
+          ></ChildExample>
+        }
       </>
     );
   }
